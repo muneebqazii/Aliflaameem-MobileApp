@@ -1,17 +1,22 @@
 {
   "expo": {
-    "name": "aliflaameem-mobile",
-    "slug": "aliflaameem-mobile",
+    "name": "Aliflaameem",
+    "slug": "aliflaameem",
+    "owner": "favvoss-organization",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#071a0e",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aliflaameem.app"
     },
     "android": {
+      "package": "com.aliflaameem.app",
+      "versionCode": 2,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#071a0e",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -20,6 +25,49 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/logo-seal-final.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#071a0e"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Aliflaameem uses your location to show prayer times and the Qibla direction for where you are."
+        }
+      ],
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "PrayerTimes",
+              "label": "Aliflaameem Prayer Times",
+              "description": "Next prayer time and today's Hijri date",
+              "minWidth": "250dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 4,
+              "targetCellHeight": 2,
+              "resizeMode": "horizontal|vertical",
+              "previewImage": "./assets/widget-preview.png",
+              "updatePeriodMillis": 1800000
+            }
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "00d5b757-2335-4790-b534-ef13af3e7afb"
+      }
     }
   }
 }
